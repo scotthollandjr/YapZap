@@ -8,6 +8,7 @@ public class Review {
   private String date;
   private int rating;
   private String review;
+  private int restaurantId;
 
   public Review(String name, String date, int rating, String review){
     this.name = name;
@@ -19,32 +20,40 @@ public class Review {
   public String getName(){
     return name;
   }
+
   public String getDate(){
     return date;
   }
+
   public int getRating(){
     return rating;
   }
+
   public String getReview(){
     return review;
   }
+
   public int getId(){
     return id;
   }
+
   public static List<Review> all() {
     try(Connection con = DB.sql2o.open()){
       String sql = "SELECT * FROM reviews";
       return con.createQuery(sql).executeAndFetch(Review.class);
     }
   }
-  public void save(){
+
+  public void saveReviewToRestaurant(int inputId) {
     try(Connection con = DB.sql2o.open()){
-      String sql = "INSERT INTO reviews(name, date, rating, review) VALUES (:name, :date, :rating, :review)";
+      String sql = "INSERT INTO reviews(name, date, rating, review, restaurantid) VALUES (:name, :date, :rating, :review, :restaurantId)";
+      this.restaurantId = inputId;
       this.id = (int) con.createQuery(sql, true)
       .addParameter("name", this.name)
       .addParameter("date", this.date)
       .addParameter("rating", this.rating)
       .addParameter("review", this.review)
+      .addParameter("restaurantId", this.restaurantId)
       .executeUpdate()
       .getKey();
     }

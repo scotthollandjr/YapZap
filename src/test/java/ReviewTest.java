@@ -11,6 +11,7 @@ public class ReviewTest {
   public void setUp() {
     DB.sql2o = new Sql2o("jdbc:postgresql://localhost:5432/yapzap_test", null, null);
   }
+
   @After
   public void tearDown() {
     try(Connection con = DB.sql2o.open()) {
@@ -50,16 +51,15 @@ public class ReviewTest {
   @Test
   public void save_returnsIdUponSave_int(){
     Review review = new Review("name", "date and time", 1, "review");
-    review.save();
+    review.saveReviewToRestaurant(5);
     assertEquals(Review.all().get(0).getId(), review.getId());
   }
 
   @Test
   public void find_findReviewById_int() {
     Review review = new Review("name", "date and time", 1, "review");
-    review.save();
+    review.saveReviewToRestaurant(5);
     Review reviewId = Review.find(review.getId());
     assertEquals("name", reviewId.getName());
   }
-
 }
