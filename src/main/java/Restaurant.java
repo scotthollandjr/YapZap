@@ -15,6 +15,7 @@ public class Restaurant {
   private String hours;
   private int rating;
   private String cost;
+  private List<Review> restaurantReviews;
 
   public Restaurant(String name, String genre, String location, String number, String address, String description, String hours, String cost){
     this.name = name;
@@ -105,6 +106,15 @@ public class Restaurant {
       .addParameter("id", id)
       .executeAndFetchFirst(Restaurant.class);
       return restaurant;
+    }
+  }
+
+  public List<Review> getReviews() {
+    try(Connection con = DB.sql2o.open()){
+      String sql = "SELECT * FROM reviews WHERE restaurantId=:id";
+      return con.createQuery(sql)
+      .addParameter("id", this.id)
+      .executeAndFetch(Review.class);
     }
   }
 }
