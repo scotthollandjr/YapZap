@@ -1,3 +1,70 @@
 <h1>¡YapZap!</h1>
+<hr>
+<ol>
+#foreach($restaurant in $restaurants.all())
+  <li>$restaurant.getName()</li>
+#end
+</ol>
+<hr>
+<h3>Add A Restaurant!</h3>
+
+<form action="/index" method="post">
+  <div class="form-control">
+    <label for="name">Name:</label>
+    <input type="text" name="name" id="name"></input>
+  </div>
+
+  <div class="form-control">
+    <label for="genre">Genre:</label>
+    <select id="genre" name="genre">
+      <option name="mexican" id="mexican" value="mexican">Mexican</option>
+      <option name="chinese" id="chinese" value="chinese">Chinese</option>
+      <option name="indian" id="indian" value="indian">Indian</option>
+      <option name="vegan" id="vegan" value="vegan">Vegan</option>
+      <option name="barbeque" id="barbeque" value="barbeque">Barbeque</option>
+      <option name="thai" id="thai" value="thai">Thai</option>
+    </select>
+  </div>
+
+  <div class="form-control">
+    <label for="location">Location</label>
+    <select id="location" name="location">
+      <option name="southeast" id="southeast" value="southeast">Southeast</option>
+      <option name="southwest" id="southwest" value="southwest">Southwest</option>
+      <option name="northeast" id="northeast" value="northeast">Northeast</option>
+      <option name="northwest" id="northwest" value="northwest">Northwest</option>
+    </select>
+  </div>
+
+  <div class="form-control">
+    <label for="description">Description:</label>
+    <input type="text" name="description" id="description"></input>
+  </div>
+
+  <div class="form-control">
+    <label for="number">Phone:</label>
+    <input type="text" name="number" id="number"></input>
+  </div>
+
+  <div class="form-control">
+    <label for="hours">Address:</label>
+    <input type="text" name="address" id="address"></input>
+  </div>
+
+  <div class="form-control">
+    <label for="hours">Hours:</label>
+    <input type="text" name="hours" id="hours"></input>
+  </div>
+
+  <div class="form-control">
+    <label for="cost">Cost:</label>
+    <input type="radio" name="cost" id="cost" value="1">$</option>
+    <input type="radio" name="cost" id="cost" value="2">$$</option>
+    <input type="radio" name="cost" id="cost" value="3">$$$</option>
+  </div>
+
+  <button type="submit" class="btn">Submit!</button>
+
+</form>
 
 <a href="/">Return Home</a>

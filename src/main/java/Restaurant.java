@@ -117,4 +117,13 @@ public class Restaurant {
       .executeAndFetch(Review.class);
     }
   }
+
+//   public int getAverageRating() {
+//     getReviews(); //[we need to call the reviews array]
+//     ratingScore = 0;
+//     for review in reviews { //[cycle through each review to grab its rating]
+//       ratingScore + review.getRating(); //[add them all together]
+//     }
+//     ratingScore / reviews.size(); //[divide by amount of ratings for average]
+//   } return ratingScore;
 }

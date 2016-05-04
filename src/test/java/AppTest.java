@@ -25,10 +25,10 @@ public class AppTest extends FluentTest {
   // @Rule
   // public ClearRule clearRule = new ClearRule();
 
-  // @Test
-  // public void rootTest() {
-  //   goTo("http://localhost:4567/");
-  //   assertThat(pageSource()).contains("Something on your Index.vtl page");
-  // }
+  @Test
+  public void rootTest() {
+    goTo("http://localhost:4567/");
+    assertThat(pageSource()).contains("¡YapZap!");
+  }
 
 }
