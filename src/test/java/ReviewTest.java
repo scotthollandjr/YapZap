@@ -19,7 +19,6 @@ public class ReviewTest {
     }
   }
 
-
   @Test
   public void review_instantiatesCorrectly_true(){
     Review review = new Review("name", "date and time", 1, "review");
@@ -47,5 +46,20 @@ public class ReviewTest {
     Review review = new Review("name", "date and time", 1, "review");
     assertEquals("review", review.getReview());
   }
-  
+
+  @Test
+  public void save_returnsIdUponSave_int(){
+    Review review = new Review("name", "date and time", 1, "review");
+    review.save();
+    assertEquals(Review.all().get(0).getId(), review.getId());
+  }
+
+  @Test
+  public void find_findReviewById_int() {
+    Review review = new Review("name", "date and time", 1, "review");
+    review.save();
+    Review reviewId = Review.find(review.getId());
+    assertEquals("name", reviewId.getName());
+  }
+
 }
