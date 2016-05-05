@@ -1,3 +1,67 @@
+/*body {
+  background-color: #ffedcc;
+}*/
+
 #ratingImage {
   width: 100px;
+}
+
+h3 {
+  font-family: 'Slabo 27px', serif;
+
+}
+
+#logo p {
+  font-family: 'Lobster', cursive;
+  font-size: 8em;
+}
+
+#logo {
+  margin-left: 5%;
+  padding-top: 2%;
+}
+
+#container {
+  margin-left: 2%;
+  margin-right: 2%;
+}
+
+#form-container {
+  background-color: #f2e5f2;
+}
+
+form {
+  padding: 2%;
+  margin: 3% 7% 3% 2%;
+}
+
+#feedback {
+  height: 100px;
+}
+
+/*** STICKY FOOTER ******/
+html {
+    position: relative;
+    min-height: 100%;
+}
+
+body {
+    margin: 0 0 25px;
+}
+
+footer {
+    text-align: center;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 35px;
+    width: 100%;
+}
+
+#left-form {
+  float: left;
+}
+
+#right-form {
+  float: right;
 }
