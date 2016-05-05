@@ -1,0 +1,25 @@
+<p>$restaurant.getName() is a great $restaurant.getGenre() restaurant.</p>
+<p>Located in $restaurant.getLocation() Portland, at $restaurant.getAddress()</p>
+<p>Open from $restaurant.getHours()</p>
+
+$restaurant.getDescription()
+<h4>Details:</h4>
+<p>Phone Number: $restaurant.getNumber()</p>
+<p>Cost: $restaurant.getCost()</p>
+
+<h4>Reviews</h4>
+<hr>
+  #foreach($review in $reviews)
+  <div id="something">
+    <hr>
+    <h4>From: $review.getName()</h4>
+    <p>Feedback: $review.getFeedback()</p>
+    <p>Submitted On:$review.getDate()</p>
+    <p>Overall Rating: $review.getRating()</p>
+    <hr>
+  </div>
+  #end
+<hr>
+
+<a href="/restaurant/$restaurant.getId()/review/new">Add Review</a>
+<a href="/">Home</a>

@@ -6,15 +6,15 @@ public class Review {
   private int id;
   private String name;
   private String date;
-  private int rating;
-  private String review;
+  private String rating;
+  private String feedback;
   private int restaurantId;
 
-  public Review(String name, String date, int rating, String review){
+  public Review(String name, String date, String rating, String feedback){
     this.name = name;
     this.date = date;
     this.rating = rating;
-    this.review = review;
+    this.feedback = feedback;
   }
 
   public String getName(){
@@ -25,12 +25,12 @@ public class Review {
     return date;
   }
 
-  public int getRating(){
+  public String getRating(){
     return rating;
   }
 
-  public String getReview(){
-    return review;
+  public String getFeedback(){
+    return feedback;
   }
 
   public int getId(){
@@ -46,13 +46,13 @@ public class Review {
 
   public void saveReviewToRestaurant(int inputId) {
     try(Connection con = DB.sql2o.open()){
-      String sql = "INSERT INTO reviews(name, date, rating, review, restaurantid) VALUES (:name, :date, :rating, :review, :restaurantId)";
+      String sql = "INSERT INTO reviews(name, date, rating, feedback, restaurantid) VALUES (:name, :date, :rating, :feedback, :restaurantId)";
       this.restaurantId = inputId;
       this.id = (int) con.createQuery(sql, true)
       .addParameter("name", this.name)
       .addParameter("date", this.date)
       .addParameter("rating", this.rating)
-      .addParameter("review", this.review)
+      .addParameter("feedback", this.feedback)
       .addParameter("restaurantId", this.restaurantId)
       .executeUpdate()
       .getKey();

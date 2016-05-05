@@ -1,0 +1,36 @@
+<h3>Add a review to $restaurant.getName():</h3>
+
+<form action="/success-review" method="post">
+  <div class="form-control">
+    <label for="name">Username:</label>
+    <input type="text" name="name" id="name"></input>
+  </div>
+
+  <div class="form-control">
+    <label for="feedback">Feedback:</label>
+    <input type="text" name="feedback" id="feedback"></input>
+  </div>
+
+  <div class="form-control">
+    <label for="date">Date/Time:</label>
+    <input type="text" name="date" id="date"></input>
+  </div>
+
+  <div class="form-control">
+    <label for="rating">Rating:</label>
+    <input type="radio" name="rating" id="rating" value="1">*</option>
+    <input type="radio" name="rating" id="rating" value="2">**</option>
+    <input type="radio" name="rating" id="rating" value="3">***</option>
+    <input type="radio" name="rating" id="rating" value="4">****</option>
+    <input type="radio" name="rating" id="rating" value="5">*****</option>
+  </div>
+
+  <div class="form-control">
+    <input type="hidden" name="restaurantId" id="restaurantId" value="$restaurant.getId()"></input>
+  </div>
+
+  <button type="submit" class="btn">Submit!</button>
+
+</form>
+
+<a href="/">Return Home</a>

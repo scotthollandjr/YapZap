@@ -1,7 +1,7 @@
 <h1>¡YapZap!</h1>
 <hr>
 #foreach($restaurant in $restaurants)
-  <h4>$restaurant.getName()</>
+  <a href="restaurant/$restaurant.getId()">$restaurant.getName()</a>
 #end
 <hr>
 <h3><a href="/restaurant/new">Add A Restaurant!</a></h3>

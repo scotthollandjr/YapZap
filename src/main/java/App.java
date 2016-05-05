@@ -44,6 +44,36 @@ public class App {
        return new ModelAndView(model, layout);
      }, new VelocityTemplateEngine());
 
+     get("/restaurant/:id", (request, response) -> {
+       Map<String, Object> model = new HashMap<String, Object>();
+       Restaurant restaurant = Restaurant.find(Integer.parseInt(request.params(":id")));
+       model.put("restaurant", restaurant);
+       model.put("reviews", Review.all());
+       model.put("template", "templates/restaurant.vtl");
+       return new ModelAndView(model, layout);
+     }, new VelocityTemplateEngine());
+
+     get("/restaurant/:id/review/new", (request, response) -> {
+       Map<String, Object> model = new HashMap<String, Object>();
+       Restaurant restaurant = Restaurant.find(Integer.parseInt(request.params(":id")));
+       model.put("restaurant", restaurant);
+       model.put("template", "templates/review-form.vtl");
+       return new ModelAndView(model, layout);
+     }, new VelocityTemplateEngine());
+
+     post("/success-review", (request, response) -> {
+        Map<String, Object> model = new HashMap<String, Object>();
+        String name = request.queryParams("name");
+        String date = request.queryParams("date");
+        String rating = request.queryParams("rating");
+        String feedback = request.queryParams("feedback");
+        int restaurantId = Integer.parseInt(request.queryParams("restaurantId"));
+        Review newReview = new Review(name, date, rating, feedback);
+        newReview.saveReviewToRestaurant(restaurantId);
+        model.put("review", newReview);
+        model.put("template", "templates/submit-success.vtl");
+        return new ModelAndView(model, layout);
+      }, new VelocityTemplateEngine());
   }
 }
 
