@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="RestaurantTest" tests="11" skipped="0" failures="0" errors="0" timestamp="2016-05-05T16:53:55" hostname="epicodus-67.local" time="0.155">
+  <properties/>
+  <testcase name="getGenre_getsGenreCorrectly_String" classname="RestaurantTest" time="0.057"/>
+  <testcase name="getNumber_getsNumberCorrectly_String" classname="RestaurantTest" time="0.005"/>
+  <testcase name="getName_getsNameCorrectly_String" classname="RestaurantTest" time="0.005"/>
+  <testcase name="findRestaurant_findRestaurantById_String" classname="RestaurantTest" time="0.041"/>
+  <testcase name="restaurant_instantiatesCorrectly_true" classname="RestaurantTest" time="0.006"/>
+  <testcase name="getAddress_getsAddressCorrectly_String" classname="RestaurantTest" time="0.005"/>
+  <testcase name="getLocation_getsLocationCorrectly_String" classname="RestaurantTest" time="0.004"/>
+  <testcase name="getDescription_getsDescriptionCorrectly_String" classname="RestaurantTest" time="0.004"/>
+  <testcase name="getHours_getsHoursCorrectly_String" classname="RestaurantTest" time="0.004"/>
+  <testcase name="getCost_getsCostCorrectly_String" classname="RestaurantTest" time="0.005"/>
+  <testcase name="getRestaurantId_returnsIdUponSave_int" classname="RestaurantTest" time="0.015"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

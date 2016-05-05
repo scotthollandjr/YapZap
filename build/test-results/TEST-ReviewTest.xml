@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="ReviewTest" tests="7" skipped="0" failures="0" errors="0" timestamp="2016-05-05T16:53:55" hostname="epicodus-67.local" time="0.053">
+  <properties/>
+  <testcase name="review_instantiatesCorrectly_true" classname="ReviewTest" time="0.005"/>
+  <testcase name="save_returnsIdUponSave_int" classname="ReviewTest" time="0.014"/>
+  <testcase name="review_getRating_int" classname="ReviewTest" time="0.004"/>
+  <testcase name="find_findReviewById_int" classname="ReviewTest" time="0.015"/>
+  <testcase name="review_getName_String" classname="ReviewTest" time="0.005"/>
+  <testcase name="review_getReview_String" classname="ReviewTest" time="0.004"/>
+  <testcase name="review_getDate_String" classname="ReviewTest" time="0.004"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

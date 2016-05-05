@@ -4,6 +4,9 @@ import java.util.HashMap;
 import spark.ModelAndView;
 import spark.template.velocity.VelocityTemplateEngine;
 import static spark.Spark.*;
+import org.sql2o.*;
+import java.util.List;
+import java.util.ArrayList;
 
 public class App {
   public static void main(String[] args) {
@@ -12,26 +15,35 @@ public class App {
 
     get("/", (request, response) -> {
        Map<String, Object> model = new HashMap<String, Object>();
+       model.put("restaurants", Restaurant.all());
        model.put("template", "templates/index.vtl");
        return new ModelAndView(model, layout);
      }, new VelocityTemplateEngine());
 
-    post("/index", (request, response) -> {
+    get("/restaurant/new", (request, response) -> {
       Map<String, Object> model = new HashMap<String, Object>();
-      String name = request.queryParams("name");
-      String genre = request.queryParams("genre");
-      String location = request.queryParams("location");
-      String description = request.queryParams("description");
-      String number = request.queryParams("number");
-      String hours = request.queryParams("hours");
-      String cost = request.queryParams("cost");
-      String address = request.queryParams("address");
-
-      Restaurant newRestaurant = new Restaurant(name, genre, location, number, address, description, hours, cost);
-      model.put("restaurants", Restaurant.all());
-      model.put("template", "templates/index.vtl");
+      model.put("template", "templates/restaurant-form.vtl");
       return new ModelAndView(model, layout);
     }, new VelocityTemplateEngine());
+
+    post("/success", (request, response) -> {
+       Map<String, Object> model = new HashMap<String, Object>();
+       String name = request.queryParams("name");
+       String genre = request.queryParams("genre");
+       String location = request.queryParams("location");
+       String description = request.queryParams("description");
+       String number = request.queryParams("number");
+       String hours = request.queryParams("hours");
+       String cost = request.queryParams("cost");
+       String address = request.queryParams("address");
+       Restaurant newRestaurant = new Restaurant(name, genre, location, number, address, description, hours, cost);
+       newRestaurant.save();
+       model.put("restaurant", newRestaurant);
+       model.put("restaurants", Restaurant.all());
+       model.put("template", "templates/submit-success.vtl");
+       return new ModelAndView(model, layout);
+     }, new VelocityTemplateEngine());
+
   }
 }
 
