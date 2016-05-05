@@ -1,12 +1,12 @@
 <h3>Add a restaurant:</h3>
 
 <form action="/success" method="post">
-  <div class="form-control">
+  <div class="input-group">
     <label for="name">Name:</label>
     <input type="text" name="name" id="name"></input>
   </div>
 
-  <div class="form-control">
+  <div class="input-group">
     <label for="genre">Genre:</label>
     <select id="genre" name="genre">
       <option name="mexican" id="mexican" value="mexican">Mexican</option>
@@ -18,7 +18,7 @@
     </select>
   </div>
 
-  <div class="form-control">
+  <div class="input-group">
     <label for="location">Location</label>
     <select id="location" name="location">
       <option name="southeast" id="southeast" value="southeast">Southeast</option>
@@ -28,35 +28,38 @@
     </select>
   </div>
 
-  <div class="form-control">
+  <div class="input-group">
     <label for="description">Description:</label>
     <input type="text" name="description" id="description"></input>
   </div>
 
-  <div class="form-control">
+  <div class="input-group">
     <label for="number">Phone:</label>
     <input type="text" name="number" id="number"></input>
   </div>
 
-  <div class="form-control">
+  <div class="input-group">
     <label for="hours">Address:</label>
     <input type="text" name="address" id="address"></input>
   </div>
 
-  <div class="form-control">
+  <div class="input-group">
     <label for="hours">Hours:</label>
     <input type="text" name="hours" id="hours"></input>
   </div>
 
-  <div class="form-control">
+  <div class="input-group">
     <label for="cost">Cost:</label>
     <input type="radio" name="cost" id="cost" value="$">$</option>
     <input type="radio" name="cost" id="cost" value="$$">$$</option>
     <input type="radio" name="cost" id="cost" value="$$$">$$$</option>
   </div>
 
-  <button type="submit" class="btn">Submit!</button>
+  <div class="input-group">
+    <input type="hidden" name="restaurantid" id="restaurantid" value="$restaurant.getId()"></input>
+  </div>
 
+  <button type="submit" class="btn">Submit!</button>
 </form>
 
 <a href="/">Return Home</a>
