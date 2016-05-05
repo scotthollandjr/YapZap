@@ -11,11 +11,12 @@ $restaurant.getDescription()
 <hr>
   #foreach($review in $reviews)
   <div id="something">
+    <!-- so... this is my idea. it might be dumb, but hear me out. When a user submits a review with a rating, we print the number of stars (loop through a list of star.png's) and populates a png based upon that rating in the right hand side of the review "block"... -->
     <hr>
     <h4>From: $review.getName()</h4>
     <p>Feedback: $review.getFeedback()</p>
     <p>Submitted On:$review.getDate()</p>
-    <p>Overall Rating: $review.getRating()</p>
+      <p>Overall Rating: $review.getRating()<img src=/$review.getRating()></p>
     <hr>
   </div>
   #end

@@ -70,6 +70,9 @@ public class App {
         int restaurantId = Integer.parseInt(request.queryParams("restaurantId"));
         Review newReview = new Review(name, date, rating, feedback);
         newReview.saveReviewToRestaurant(restaurantId);
+        // model.put("imageurl1", "<img src=");
+        // model.put("imageurl2", rating);
+        // model.put("imageurl3", ">");
         model.put("review", newReview);
         model.put("template", "templates/submit-success.vtl");
         return new ModelAndView(model, layout);
