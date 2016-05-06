@@ -6,7 +6,8 @@ $restaurant.getDescription()
 <h4>Details:</h4>
 <p>Phone Number: $restaurant.getNumber()</p>
 <p>Cost: $restaurant.getCost()</p>
-
+<br>
+<h2><a class="btn btn-link btn-lg navbutt navbuttdouble" href="/restaurant/$restaurant.getId()/review/new">Add Review</a></h2>
 <hr>
   #foreach($review in $reviews)
   <h3>Reviews</h3>
@@ -19,5 +20,4 @@ $restaurant.getDescription()
   #end
 <hr>
 
-<a href="/restaurant/$restaurant.getId()/review/new">Add Review</a> |
-<a href="/">Home</a>
+<h2><a class="btn btn-link btn-lg navbutt navbuttdouble" href="/">Home</a></h2>

@@ -1,9 +1,13 @@
 
-<h3>Snapping back at the yappity-zap yo</h3>
-<p>Shut up dad...</p>
+<h3>Snapping back at the yappity-zap, yo</h3>
 <hr>
-#foreach($restaurant in $restaurants)
-  <a href="restaurant/$restaurant.getId()">$restaurant.getName()</a>
-#end
+  #foreach($restaurant in $restaurants)
+    <h2><a href="restaurant/$restaurant.getId()">$restaurant.getName()</a></h2>
+    #if ($reviews.size() == 1)
+    <p>Reviewed $reviews.size() time</p>
+    #else
+    <p>Reviewed $reviews.size() times</p>
+    #end
+  #end
 <hr>
-<a class="btn btn-link" href="/restaurant/new" role="button">Add a Restaurant!</a>
+<h2><a class="btn btn-link btn-lg navbutt" href="/restaurant/new" role="button">Add a Restaurant</a></h2>

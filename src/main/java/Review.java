@@ -67,4 +67,13 @@ public class Review {
       return review;
     }
   }
+
+  public static List<Review> getReviews(int id) {
+    try(Connection con = DB.sql2o.open()){
+      String sql = "SELECT * FROM reviews WHERE restaurantId=:id";
+      return con.createQuery(sql)
+      .addParameter("id", id)
+      .executeAndFetch(Review.class);
+    }
+  }
 }

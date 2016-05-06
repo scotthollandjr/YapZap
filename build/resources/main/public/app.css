@@ -35,6 +35,12 @@ form {
   margin: 3% 7% 3% 2%;
 }
 
+.navbutt {
+  display: block;
+  text-align: center;
+  font-family: 'Slabo 27px', serif;
+}
+
 #feedback, #description {
   height: 100px;
 }

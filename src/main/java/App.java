@@ -16,6 +16,7 @@ public class App {
     get("/", (request, response) -> {
        Map<String, Object> model = new HashMap<String, Object>();
        model.put("restaurants", Restaurant.all());
+       model.put("reviews", Review.all());
        model.put("template", "templates/index.vtl");
        return new ModelAndView(model, layout);
      }, new VelocityTemplateEngine());
@@ -46,8 +47,9 @@ public class App {
      get("/restaurant/:id", (request, response) -> {
        Map<String, Object> model = new HashMap<String, Object>();
        Restaurant restaurant = Restaurant.find(Integer.parseInt(request.params(":id")));
+       int inputId = Integer.parseInt((request.params(":id")));
+       model.put("reviews", Review.getReviews(inputId));
        model.put("restaurant", restaurant);
-       model.put("reviews", Review.all());
        model.put("template", "templates/restaurant.vtl");
        return new ModelAndView(model, layout);
      }, new VelocityTemplateEngine());
