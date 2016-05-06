@@ -2,12 +2,12 @@
 <h3>Snapping back at the yappity-zap, yo</h3>
 <hr>
   #foreach($restaurant in $restaurants)
-    <h2><a href="restaurant/$restaurant.getId()">$restaurant.getName()</a></h2>
-    <!-- #if ($reviews.size() == 1)
-    <p>Reviewed $reviews.size() time</p>
+    <span class="restaurantLink"><a href="restaurant/$restaurant.getId()">$restaurant.getName()</a></span> ($restaurant.getGenre())
+    #if ($restaurant.getReviews().size() == 1)
+    <p>Reviewed $restaurant.getReviews().size() time</p>
     #else
-    <p>Reviewed $reviews.size() times</p>
-    #end -->
+    <p>Reviewed $restaurant.getReviews().size() times</p>
+    #end
   #end
 <hr>
 <h2><a class="btn btn-link btn-lg navbutt" href="/restaurant/new" role="button">Add a Restaurant</a></h2>

@@ -1,6 +1,14 @@
-/*body {
-  background-color: #ffedcc;
-}*/
+html {
+  background: url('/tree.xfc') no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+.restaurantLink {
+  font-size: 1.5em;
+}
 
 #ratingImage {
   width: 100px;
