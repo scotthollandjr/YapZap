@@ -29,6 +29,10 @@ public class Review {
     return rating;
   }
 
+  public String getRatingPic(){
+    return rating + ".png";
+  }
+
   public String getFeedback(){
     return feedback;
   }

@@ -11,3 +11,13 @@
   #end
 <hr>
 <h2><a class="btn btn-link btn-lg navbutt" href="/restaurant/new" role="button">Add a Restaurant</a></h2>
+
+
+<!-- #set ($sum = 0)
+#foreach($review in $reviews)
+  #set ($string = $review.getRating())
+  #set ($Integer = 0)
+  $Integer.parseInt($string)
+  #set ($sum = $sum + $Integer)
+#end -->
+<!-- ####set ($sum = $sum / $reviews.size()) -->

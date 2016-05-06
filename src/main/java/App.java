@@ -16,7 +16,7 @@ public class App {
     get("/", (request, response) -> {
        Map<String, Object> model = new HashMap<String, Object>();
        model.put("restaurants", Restaurant.all());
-       model.put("reviews", Review.all());
+      //  model.put("reviews", Restaurant.getReviews());
        model.put("template", "templates/index.vtl");
        return new ModelAndView(model, layout);
      }, new VelocityTemplateEngine());
@@ -36,7 +36,10 @@ public class App {
        String hours = request.queryParams("hours");
        String cost = request.queryParams("cost");
        String address = request.queryParams("address");
-       Restaurant newRestaurant = new Restaurant(name, genre, number, address, description, hours, cost);
+       String city = request.queryParams("city");
+       String state = request.queryParams("state");
+       String zipcode = request.queryParams("zipcode");
+       Restaurant newRestaurant = new Restaurant(name, genre, number, address, city, state, zipcode, description, hours, cost);
        newRestaurant.save();
        model.put("restaurant", newRestaurant);
        model.put("restaurants", Restaurant.all());

@@ -1,23 +1,25 @@
-<p>$restaurant.getName() is a great $restaurant.getGenre() restaurant.</p>
-<p>Located in $restaurant.getLocation() Portland, at $restaurant.getAddress()</p>
+<h2>$restaurant.getName()</h2>
+<h3>$restaurant.getDescription()</h3>
+<p>$restaurant.getGenre(), <strong>$restaurant.getCost()</strong></p>
 <p>Open from $restaurant.getHours()</p>
 
-$restaurant.getDescription()
-<h4>Details:</h4>
-<p>Phone Number: $restaurant.getNumber()</p>
-<p>Cost: $restaurant.getCost()</p>
-<br>
+
+
+<p><strong>$restaurant.getAddress()</strong></p>
+<p>$restaurant.getCity(), $restaurant.getState() $restaurant.getZipcode()</p>
+<h4><strong>$restaurant.getNumber()</strong></h4>
+
+
+
 <h2><a class="btn btn-link btn-lg navbutt navbuttdouble" href="/restaurant/$restaurant.getId()/review/new">Add Review</a></h2>
 <hr>
   #foreach($review in $reviews)
-  <h3>Reviews</h3>
+  <h3>Reviews:</h3>
     <hr>
-    <h4>From: $review.getName()</h4>
-    <p>Feedback: $review.getFeedback()</p>
-    <p>Submitted: $review.getDate()</p>
-      <p>User Rating: <img id="ratingImage" src=/$review.getRating()></p>
+    <p><span class="h4">$review.getName()</span> $review.getDate()</p>
+    <p>$review.getFeedback()</p>
+      <p>User Rating: <img id="ratingImage" src=/$review.getRatingPic()></p>
     <hr>
   #end
 <hr>
-
 <h2><a class="btn btn-link btn-lg navbutt navbuttdouble" href="/">Home</a></h2>
