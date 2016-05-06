@@ -35,7 +35,7 @@ form {
   margin: 3% 7% 3% 2%;
 }
 
-#feedback {
+#feedback, #description {
   height: 100px;
 }
 

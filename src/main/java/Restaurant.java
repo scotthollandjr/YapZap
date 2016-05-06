@@ -8,7 +8,6 @@ public class Restaurant {
   private int id;
   private String name;
   private String genre;
-  private String location;
   private String number;
   private String address;
   private String description;
@@ -17,10 +16,9 @@ public class Restaurant {
   private String cost;
   private List<Review> restaurantReviews;
 
-  public Restaurant(String name, String genre, String location, String number, String address, String description, String hours, String cost){
+  public Restaurant(String name, String genre, String number, String address, String description, String hours, String cost){
     this.name = name;
     this.genre = genre;
-    this.location = location;
     this.number = number;
     this.address = address;
     this.description = description;
@@ -38,10 +36,6 @@ public class Restaurant {
 
   public String getGenre(){
     return genre;
-  }
-
-  public String getLocation(){
-    return location;
   }
 
   public String getNumber(){
@@ -77,11 +71,10 @@ public class Restaurant {
 
   public void save(){
     try(Connection con = DB.sql2o.open()){
-      String sql = "INSERT INTO restaurants(name, genre, location, number, address, description, hours, cost) VALUES (:name, :genre, :location, :number, :address, :description, :hours, :cost)";
+      String sql = "INSERT INTO restaurants(name, genre, number, address, description, hours, cost) VALUES (:name, :genre, :number, :address, :description, :hours, :cost)";
       this.id = (int) con.createQuery(sql, true)
         .addParameter("name", this.name)
         .addParameter("genre", this.genre)
-        .addParameter("location", this.location)
         .addParameter("number", this.number)
         .addParameter("address", this.address)
         .addParameter("description", this.description)
@@ -91,7 +84,7 @@ public class Restaurant {
         .getKey();
     }
   }
-  
+
   public static List<Restaurant> all(){
     try(Connection con = DB.sql2o.open()) {
       String sql = "SELECT * FROM restaurants";

@@ -1,65 +1,65 @@
 <h3>Add a restaurant:</h3>
 <div class="form-container">
 <form action="/success" method="post">
-  <div class="input-group">
-    <label for="name">Name:</label>
-    <input type="text" name="name" id="name"></input>
+
+
+
+
+  <div class="row">
+    <div class="form-group col-xs-6">
+      <input class="form-control" type="text" name="name" id="name" placeholder="Name:"></input>
+    </div>
+
+
+    <div class="form-group col-xs-6">
+      <input class="form-control" type="text" name="number" id="number" placeholder="Phone number:"></input>
+    </div>
   </div>
 
-  <div class="input-group">
-    <label for="genre">Genre:</label>
-    <select id="genre" name="genre">
-      <option name="mexican" id="mexican" value="mexican">Mexican</option>
-      <option name="chinese" id="chinese" value="chinese">Chinese</option>
-      <option name="indian" id="indian" value="indian">Indian</option>
-      <option name="vegan" id="vegan" value="vegan">Vegan</option>
-      <option name="barbeque" id="barbeque" value="barbeque">Barbeque</option>
-      <option name="thai" id="thai" value="thai">Thai</option>
-    </select>
+  <div class="row">
+    <div class="form-group col-xs-6">
+      <input class="form-control" type="text" name="hours" id="hours" placeholder="Hours:"></input>
+    </div>
+
+    <div class="form-group col-xs-6">
+      <input class="form-control" type="text" name="address" id="address" placeholder="Address:"></input>
+    </div>
   </div>
 
-  <div class="input-group">
-    <label for="location">Location</label>
-    <select id="location" name="location">
-      <option name="southeast" id="southeast" value="southeast">Southeast</option>
-      <option name="southwest" id="southwest" value="southwest">Southwest</option>
-      <option name="northeast" id="northeast" value="northeast">Northeast</option>
-      <option name="northwest" id="northwest" value="northwest">Northwest</option>
-    </select>
+  <div class="row">
+    <div class="form-group col-xs-6">
+      <select  class="form-control" id="cost" name="cost">
+        <option name="cost" selected="selected" disabled>Select a price-level</option>
+        <option name="cost" id="cost" value="$">$</option>
+        <option name="cost" id="cost" value="$$">$$</option>
+        <option name="cost" id="cost" value="$$$">$$$</option>
+      </select>
+    </div>
+
+    <div class="form-group col-xs-6">
+      <select class="form-control" id="genre" name="genre">
+        <option name="genre" selected="selected" disabled>Select a genre</option>
+        <option name="genre" id="genre" value="mexican">Mexican</option>
+        <option name="genre" id="genre" value="chinese">Chinese</option>
+        <option name="genre" id="genre" value="indian">Indian</option>
+        <option name="genre" id="genre" value="vegan">Vegan</option>
+        <option name="genre" id="genre" value="barbeque">Barbeque</option>
+        <option name="thai" id="thai" value="thai">Thai</option>
+      </select>
+    </div>
   </div>
 
-  <div class="input-group">
-    <label for="description">Description:</label>
-    <input type="text" name="description" id="description"></input>
-  </div>
-
-  <div class="input-group">
-    <label for="number">Phone:</label>
-    <input type="text" name="number" id="number"></input>
-  </div>
-
-  <div class="input-group">
-    <label for="hours">Address:</label>
-    <input type="text" name="address" id="address"></input>
-  </div>
-
-  <div class="input-group">
-    <label for="hours">Hours:</label>
-    <input type="text" name="hours" id="hours"></input>
-  </div>
-
-  <div class="input-group">
-    <label for="cost">Cost:</label>
-    <input type="radio" name="cost" id="cost" value="$">$</option>
-    <input type="radio" name="cost" id="cost" value="$$">$$</option>
-    <input type="radio" name="cost" id="cost" value="$$$">$$$</option>
+  <div class="row">
+    <div class="form-group col-xs-12">
+      <textarea class="form-control" type="text" name="description" id="description" placeholder="Description:"></textarea>
+    </div>
   </div>
 
   <div class="input-group">
     <input type="hidden" name="restaurantid" id="restaurantid" value="$restaurant.getId()"></input>
   </div>
 
-  <button type="submit" class="btn">Submit!</button>
+  <button style="display: block; width: 100%;" type="submit" class="btn btn-info text-center">- submit -</button>
 </form>
 </div>
 
